@@ -5,10 +5,10 @@ import { withKnobs, select } from "@storybook/addon-knobs/react";
 addDecorator(withKnobs);
 setAddon(JSXAddon);
 
-const req = require.context("../src", true, /.stories.js$/);
+const req = require.context("../src", true, /.stories.tsx$/);
 function loadStories() {
   require("./welcomeStory");
-  // req.keys().forEarch(filename => req(filename));
+  req.keys().forEarch(filename => req(filename));
 }
 
 configure(loadStories, module);
